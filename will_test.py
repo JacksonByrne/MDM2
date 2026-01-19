@@ -1,6 +1,5 @@
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
-import numpy as np
 
 # Create figure and axis
 fig, ax = plt.subplots()
@@ -29,7 +28,8 @@ def update(frame):
     if y <= 0 or y >= 10:
         vy *= -1
 
-    ball.set_data(x, y)
+    # pass sequences, not scalars
+    ball.set_data([x], [y])
     return ball,
 
 ani = animation.FuncAnimation(
