@@ -5,8 +5,8 @@ def clear():
     # Works on Windows, macOS, Linux
     os.system("cls" if os.name == "nt" else "clear")
 
-def bouncing_text(width=30, cycles=3, delay=0.05):
-    text = "Hello VS Code!"
+def bouncing_text(width=30, cycles=3, delay=0.05, input_text):
+    text = input_text
     pos = 0
     direction = 1  # 1 = right, -1 = left
     steps = cycles * (width - len(text)) * 2
@@ -20,5 +20,5 @@ def bouncing_text(width=30, cycles=3, delay=0.05):
         if pos <= 0 or pos >= width - len(text):
             direction *= -1
 
-if __name__ == "__main__":
-    bouncing_text()
+bouncing_text('Hello')
+bouncing_text('Weee')
